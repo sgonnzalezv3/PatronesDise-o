@@ -1,0 +1,13 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Herramientas\Herramientas.csproj" />
+    <ProjectReference Include="..\PatronesDiseno.Modelos\PatronesDiseno.Modelos.csproj" />
+    <ProjectReference Include="..\PatronesDiseno.Repository\PatronesDiseno.Repository.csproj" />
+  </ItemGroup>
+
+</Project>

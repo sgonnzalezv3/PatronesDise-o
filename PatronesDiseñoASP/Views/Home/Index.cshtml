@@ -1,0 +1,16 @@
+﻿
+@*Trabajar sobre ese namespace*@
+
+@using PatronesDiseno.Modelos.Data
+@*Trabajar sobre el tipo que esta dentro de ese namespace*@
+@model IEnumerable<Beer>
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div>
+    @foreach(var beer in Model)
+            {
+                <p>@beer.Name</p>
+            }
+</div>
