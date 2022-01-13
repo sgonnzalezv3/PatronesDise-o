@@ -46,15 +46,21 @@ namespace PatronesDiseño.Models
                     .IsRequired()
                     .HasMaxLength(50)
                     .IsUnicode(false);
+
+                entity.HasOne(d => d.Brand)
+                    .WithMany(p => p.Beers)
+                    .HasForeignKey(d => d.BrandId);
             });
 
             modelBuilder.Entity<Brand>(entity =>
             {
                 entity.ToTable("Brand");
 
+                entity.Property(e => e.BrandId).HasDefaultValueSql("(newid())");
+
                 entity.Property(e => e.Name)
                     .IsRequired()
-                    .HasMaxLength(50)
+                    .HasMaxLength(100)
                     .IsUnicode(false);
             });
 

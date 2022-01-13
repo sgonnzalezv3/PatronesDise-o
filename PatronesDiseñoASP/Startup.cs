@@ -1,4 +1,5 @@
 using Herramientas.Earn;
+using Herramientas.Generator;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -57,6 +58,13 @@ namespace PatronesDiseñoASP
             /* Inyectar unitOfWork */
 
             services.AddScoped<IUnitOfWork, UnitOfWork>();
+
+            /* inyectando builder */
+            /* Se pone la clase directamente, porque el patron builder permite que el objeto concreto
+             * tenga la generacion de un objeto que no esté ligado a la interfaz(IBuilderGenerator)
+             * porque en la classe GeneratorConcreteBuilder se necesita el objeto de tipo Generator(_generator)
+             */
+            services.AddScoped<GeneratorConcreteBuilder>();
         } 
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
