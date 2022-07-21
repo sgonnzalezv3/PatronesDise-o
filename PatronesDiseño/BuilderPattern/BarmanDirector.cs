@@ -38,6 +38,20 @@ namespace PatronesDiseño.BuilderPattern
             _builder.Mix();
             _builder.Rest(1000);
         }
+        
+        public void PreparePinaColada()
+        {
+            _builder.Reset();
+            _builder.SetAlcohol(20);
+            _builder.SetWater(10);
+            _builder.SetWater(5000);
+            _builder.AddIngredients("Ron caldas");
+            _builder.AddIngredients("Crema de coco");
+            _builder.AddIngredients("Jugo de piña");
+            _builder.AddIngredients("Hielo");
+            _builder.Mix();
+            _builder.Rest(2000);
+        }
     }
 
 }
